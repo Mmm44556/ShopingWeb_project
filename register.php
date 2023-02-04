@@ -28,13 +28,7 @@
       <div class="register-input form-floating mb-3 ">
         <input type="text" class="form-control " id="floatingInput" placeholder="a" name="register-name" maxlength="10" required>
         <label for="floatingInput" class="text-body-tertiary ">
-          使用者名稱</label>
-      </div>
-
-      <div class="register-input form-floating mb-3 ">
-        <input type="tel" class="form-control " id="floatingInput" placeholder="number" name="register-phone-number" maxlength="10" required pattern="[0-9]+">
-        <label for="floatingInput" class="text-body-tertiary ">
-          請輸手機號碼</label>
+          請輸入使用者名稱</label>
       </div>
 
       <div class="register-password-input form-floating mb-3 position-relative">
@@ -48,41 +42,56 @@
       <div class="register-verify-password form-floating mb-1 position-relative">
         <input type="password" class="password form-control mb-2" id="floatingPassword" placeholder="Password" name="register-verify-password" maxlength="10" required>
         <label for="floatingPassword" class="text-body-tertiary">
-          請確認密碼</label>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-          <button type="reset" style="border:none; background: white;">
-            <a class="sign-up-link link-secondary" id="">
-              重置</a></button>
-          <div class="vr"></div>
-          <a class="sign-up-link link-secondary" href="account.html" id="">
-            登入</a>
-          <div class="vr"></div>
-          <a class="forget-passward-link link-secondary" href="#" id="">
-            忘記密碼</a>
+          請再次確認密碼</label>
+      </div>
+
+      <div class="register-input form-floating mb-3 ">
+        <input type="tel" class="form-control " id="floatingInput" placeholder="number" name="register-phone-number" maxlength="10" required pattern="[0-9]+">
+        <label for="floatingInput" class="text-body-tertiary ">
+          請輸入手機號碼</label>
+      </div>
+
+      <div class="register-input form-floating mb-3 ">
+        <!-- type正式完成要記得改回mail -->
+        <input type="text" class="form-control " id="floatingInput" placeholder="number" name="register-mail">
+        <label for="floatingInput" class="text-body-tertiary">
+          請輸入信箱</label>
+      </div>
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+        <button type="reset" style="border:none; background: white;">
+          <a class="sign-up-link link-secondary" id="">
+            重置</a></button>
+        <div class="vr"></div>
+        <a class="sign-up-link link-secondary" href="account.php" id="">
+          登入</a>
+        <div class="vr"></div>
+        <a class="forget-passward-link link-secondary" href="#" id="">
+          忘記密碼</a>
+      </div>
+      <div class="d-grid col-6 mx-auto w-100 mb-3">
+        <button class="log-in-btn btn btn-primary" type="submit" value="submit">
+          註冊</button>
+      </div>
+      <div class="d-grid gap-2 col-9 mx-auto mb-2">
+        <a class="forget-passward-link link-secondary mx-auto" href="#" id="">
+          註冊問題?</a>
+      </div>
+
+      <div class="separator-content d-grid gap-1 mb-3 col-9 mx-auto  w-100 position-relative ">
+        <hr class="hr ">
+      </div>
+
+      <!-- 第三方登入 -->
+      <div class="social-signin-button d-grid gap-2 mb-1">
+        <div class="google">
+          <button class="w-100 " type="button"></button>
         </div>
-        <div class="d-grid col-6 mx-auto w-100 mb-3">
-          <button class="log-in-btn btn btn-primary" type="submit" value="submit">
-            註冊</button>
-        </div>
-        <div class="d-grid gap-2 col-9 mx-auto mb-2">
-          <a class="forget-passward-link link-secondary mx-auto" href="#" id="">
-            註冊問題?</a>
+        <div class="facebook">
+          <button class="w-100" type="button"></button>
         </div>
 
-        <div class="separator-content d-grid gap-1 mb-3 col-9 mx-auto  w-100 position-relative ">
-          <hr class="hr ">
-        </div>
 
-        <!-- 第三方登入 -->
-        <div class="social-signin-button d-grid gap-2 mb-1">
-          <div class="google">
-            <button class="w-100 " type="button"></button>
-          </div>
-          <div class="facebook">
-            <button class="w-100" type="button"></button>
-          </div>
-
-        </div>
 
 
     </form>

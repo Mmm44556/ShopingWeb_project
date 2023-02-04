@@ -20,13 +20,15 @@
     <div class="text-center mb-3 ">
       <h4>登入</h4>
     </div>
-    <form action="login.php" method="post" class="">
+    <form action="loginFunction.php" method="post" class="">
+
       <div class="account-input form-floating mb-3 ">
-        <input type="email" class="form-control " id="floatingInput" placeholder="name@example.com" name="user-id" required maxlength="50">
+        <input type="text" class="form-control " id="floatingInput" placeholder="name@example.com" name="user-id" required maxlength="50">
         <label for="floatingInput" class="text-body-tertiary ">
           <i class="bi bi-person-fill"></i>
-          Phone Number / Email</label>
+          Phone Number / 使用者名稱</label>
       </div>
+
       <div class="password-input form-floating mb-1 position-relative">
         <input type="password" class="password form-control" id="floatingPassword" placeholder="Password" maxlength="10" name="user-password" required>
         <label for="floatingPassword" class="text-body-tertiary">
@@ -34,19 +36,22 @@
           Password</label>
         <i class="bi-fill bi-eye-fill"></i>
       </div>
+
       <div class="d-inline-flex justify-content-md-between w-100">
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
           <label class="form-check-label link-secondary" for="flexSwitchCheckChecked">記住我</label>
         </div>
+
         <div class="d-grid gap-2 d-md-flex mb-3 ">
-          <a class="sign-up-link link-secondary" href="register.html" id="">
+          <a class="sign-up-link link-secondary" href="register.php" id="">
             註冊</a>
           <div class="vr"></div>
           <a class="forget-passward-link link-secondary" href="#" id="">
             忘記密碼</a>
         </div>
       </div>
+
       <div class="d-grid col-6 mx-auto w-100 mb-3">
         <button class="log-in-btn btn btn-primary" type="submit" value="submit">
           登入</button>
