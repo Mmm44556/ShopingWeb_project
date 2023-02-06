@@ -8,13 +8,14 @@
 
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
+  align-items: center;
 }
+
 
 .login-signup-pane {
   min-width: 400px;
+
 }
 
 .account-input input {
@@ -43,6 +44,7 @@ body {
   font-weight: 700;
 }
 
+
 .social-signin-button button {
   border-radius: 50px;
 }
@@ -66,10 +68,6 @@ body {
   position: absolute;
   right: 10px;
   top: 10px;
-}
-
-.bi-eye-fill:hover {
-  cursor: pointer;
 }
 
 a {
