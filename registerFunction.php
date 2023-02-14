@@ -14,7 +14,7 @@ $row = mysqli_fetch_row($result);
 if (!empty($row[1]) || empty($row[2])) {
   if ($row[1] == $regUserName || $row[2] == $regPassword) {
     echo  '帳號重複，請重新註冊';
-    echo "<script>window.location.href = 'index.php';</script>";
+    echo "<script>window.location.href = 'indextest.php';</script>";
   } else {
     if (!(empty($regUserName) ||
       empty($regPhoneNumber) ||

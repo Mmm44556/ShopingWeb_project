@@ -22,7 +22,7 @@
           <a class="nav-link" href="#">編輯<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">登出</a>
+          <a class="nav-link" href="account.php">登出</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
