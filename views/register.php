@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>註冊介面</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="stylesheet" href="./public/account.css?v=<?= time() ?>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/account.css?v=<?= time() ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
@@ -24,17 +23,15 @@
       <h4>註冊</h4>
     </div>
     <!-- 註冊表單 -->
-    <form action="./registerFunction.php" method="post" class="">
+    <form action="../registerFunction.php" method="post" class="">
       <div class="register-input form-floating mb-3 ">
-        <input type="text" class="form-control " id="floatingInput" placeholder="a" name="register-name" maxlength="10"
-          required>
+        <input type="text" class="form-control " id="floatingInput" placeholder="a" name="register-name" maxlength="10" required>
         <label for="floatingInput" class="text-body-tertiary ">
           請輸入使用者名稱</label>
       </div>
 
       <div class="register-password-input form-floating  position-relative mb-3">
-        <input type="password" class="password form-control" id="floatingPassword" placeholder="Password"
-          name="register-password" maxlength="10">
+        <input type="password" class="password form-control" id="floatingPassword" placeholder="Password" name="register-password" maxlength="10">
         <!-- <input type="password" class="password form-control" id="floatingPassword" placeholder="Password" name="register-password" maxlength="10" required pattern=""> -->
         <label for="floatingPassword" class="text-body-tertiary">
           請輸入密碼(6~10位英數混合)</label>
@@ -42,15 +39,13 @@
       </div>
 
       <div class="register-verify-password form-floating  position-relative mb-3">
-        <input type="password" class="password form-control mb-" id="floatingPassword" placeholder="Password"
-          name="register-verify-password" maxlength="10" required>
+        <input type="password" class="password form-control mb-" id="floatingPassword" placeholder="Password" name="register-verify-password" maxlength="10" required>
         <label for="floatingPassword" class="text-body-tertiary">
           請再次確認密碼</label>
       </div>
 
       <div class="register-input form-floating mb-3">
-        <input type="tel" class="form-control " id="floatingInput" placeholder="number" name="register-phone-number"
-          maxlength="10" required pattern="[0-9]+">
+        <input type="tel" class="form-control " id="floatingInput" placeholder="number" name="register-phone-number" maxlength="10" required pattern="[0-9]+">
         <label for="floatingInput" class="text-body-tertiary ">
           請輸入手機號碼</label>
       </div>
@@ -95,17 +90,12 @@
           <button class="w-100" type="button"></button>
         </div>
 
-
-
-
     </form>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
   <script src="./jquery/component.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
 <?php
-include("dataBaseConnect.inc");
+include("databaseConnect.inc");
 $regUserName = $_POST['register-name'];
 $regPassword = $_POST['register-password'];
 $regVerifyPassword = $_POST['register-verify-password'];
@@ -14,7 +14,7 @@ $row = mysqli_fetch_row($result);
 if (!empty($row[1]) || empty($row[2])) {
   if ($row[1] == $regUserName || $row[2] == $regPassword) {
     echo  '帳號重複，請重新註冊';
-    echo "<script>window.location.href = 'indextest.php';</script>";
+    // echo "<script>window.location.href = 'index.php';</script>";
   } else {
     if (!(empty($regUserName) ||
       empty($regPhoneNumber) ||
@@ -36,7 +36,7 @@ if (!empty($row[1]) || empty($row[2])) {
         $_SESSION['phoneNumber'] = $user['phoneNumber'];
         $_SESSION['mail'] = $user['mail'];
         echo "<script>alert('註冊成功');</script>";
-        echo "<script>window.location.href = 'index.php';</script>";
+        echo "<script>window.location.href = 'views/index.php';</script>";
       } else {
         echo "密碼錯誤請重新輸入!!";
       }
