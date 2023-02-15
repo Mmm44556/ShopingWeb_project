@@ -1,14 +1,13 @@
 <?php
-// include("databaseConnect.inc");
+include('../databaseConnect.inc');
 session_start();
-$userId = $_SESSION['userName'];
-
-// $sql_query = "SELECT * FROM `account` WHERE `username` = '$un' ";
-// $result = mysqli_query($link, $sql_query);
-
-if (!isset($userId)) {
+$userId = $_SESSION['userName']; //調出儲存起來的username
+if (!isset($userId)) { //
   echo "<script> alert('尚未登入,即將返回登入頁面'); top.location = 'account.php';</script>";
 }
+
+$sql_query = "SELECT * FROM `account` WHERE `userName` = '$userId'";
+$result = mysqli_query($link, $sql_query);
 
 ?>
 
@@ -20,6 +19,7 @@ if (!isset($userId)) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>會員系統</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/style.css">
 </head>
 
 <body>
@@ -45,38 +45,46 @@ if (!isset($userId)) {
       </ul>
     </div>
   </nav>
-  <table class="table table-hover table-dark">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- <button class="btn btn-danger" href="../logout.php">登出</button> -->
-  <a href="../logout.php">登出</a>
-  <!-- 預計做帳號編輯 -->
+
+
+  Hello,<?php
+        echo $userId;
+        ?>
+  <!-- 編輯modal -->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    編輯
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">帳號編輯</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="../update.php" method="post">
+            a: <input type="text">
+            b: <input type="text">
+            c: <input type="text">
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">確認</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- --------- -->
+  <button class="btn btn-danger">
+    <a href="../logout.php">登出</a>
+  </button>
+
+
 
   <!-- Bootstrap CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
