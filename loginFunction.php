@@ -6,7 +6,7 @@ $userId = $_POST['user-id'];
 $password = $_POST['user-password'];
 
 $_SESSION['userName'] = $userId;
-$_SESSION['passWord'] = $passWord;
+$_SESSION['password'] = $password;
 $_SESSION['uid'] = $uid;
 
 $sql = "SELECT * FROM  `account` WHERE 

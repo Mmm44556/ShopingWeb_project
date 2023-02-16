@@ -8,6 +8,12 @@ if (!isset($userId)) { //
 
 $sql_query = "SELECT * FROM `account` WHERE `userName` = '$userId'";
 $result = mysqli_query($link, $sql_query);
+$row_result = mysqli_fetch_assoc($result);
+$uid = $row_result['uid'];
+$username = $row_result['userName'];
+$password = $row_result['password'];
+$phone = $row_result['phoneNumber'];
+$mail = $row_result['mail'];
 
 ?>
 
@@ -66,10 +72,30 @@ $result = mysqli_query($link, $sql_query);
         </div>
         <div class="modal-body">
           <form action="../update.php" method="post">
-            a: <input type="text">
-            b: <input type="text">
-            c: <input type="text">
-
+            <div class="mb-3">
+              <label for="inputUsername" class="form-label">使用者名稱:</label>
+              <input type="text" class="form-control" id="inputUsername" name="username" value="<?php echo $username ?>">
+            </div>
+            <div class="mb-3">
+              <label for="inputPassword" class="form-label">原密碼:</label>
+              <input type="password" class="form-control" id="inputPassword" name="oldPassword">
+            </div>
+            <div class="mb-3">
+              <label for="inputNewPassword" class="form-label">新密碼:</label>
+              <input type="password" class="form-control" id="inputNewPassword" name="newPassword">
+            </div>
+            <div class="mb-3">
+              <label for="inputConfirmPassword" class="form-label">確認密碼:</label>
+              <input type="password" class="form-control" id="inputConfirmPassword" name="confirmPassword">
+            </div>
+            <div class="mb-3">
+              <label for="inputPhone" class="form-label">電話:</label>
+              <input type="phone" class="form-control" id="inputPhone" name="phone" value="<?php echo $phone ?>">
+            </div>
+            <div class="mb-3">
+              <label for="inputMail" class="form-label">信箱:</label>
+              <input type="mail" class="form-control" id="inputMail" name="mail" value="<?php echo $mail ?>">
+            </div>
           </form>
         </div>
         <div class="modal-footer">
