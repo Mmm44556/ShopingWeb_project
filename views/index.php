@@ -9,11 +9,13 @@ if (!isset($userId)) { //
 $sql_query = "SELECT * FROM `account` WHERE `userName` = '$userId'";
 $result = mysqli_query($link, $sql_query);
 $row_result = mysqli_fetch_assoc($result);
-$uid = $row_result['uid'];
-$username = $row_result['userName'];
-$password = $row_result['password'];
-$phone = $row_result['phoneNumber'];
-$mail = $row_result['mail'];
+if (!empty($row_result['uid'])) {
+  $uid = $row_result['uid'];
+  $username = $row_result['userName'];
+  $password = $row_result['password'];
+  $phone = $row_result['phoneNumber'];
+  $mail = $row_result['mail'];
+}
 
 ?>
 
@@ -59,54 +61,11 @@ $mail = $row_result['mail'];
   <!-- 編輯modal -->
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    編輯
+    <a href="./updatePage.php?uid=<?php echo $_SESSION['uid'] ?>">編輯</a>
   </button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">帳號編輯</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="../update.php" method="post">
-            <div class="mb-3">
-              <label for="inputUsername" class="form-label">使用者名稱:</label>
-              <input type="text" class="form-control" id="inputUsername" name="username" value="<?php echo $username ?>">
-            </div>
-            <div class="mb-3">
-              <label for="inputPassword" class="form-label">原密碼:</label>
-              <input type="password" class="form-control" id="inputPassword" name="oldPassword">
-            </div>
-            <div class="mb-3">
-              <label for="inputNewPassword" class="form-label">新密碼:</label>
-              <input type="password" class="form-control" id="inputNewPassword" name="newPassword">
-            </div>
-            <div class="mb-3">
-              <label for="inputConfirmPassword" class="form-label">確認密碼:</label>
-              <input type="password" class="form-control" id="inputConfirmPassword" name="confirmPassword">
-            </div>
-            <div class="mb-3">
-              <label for="inputPhone" class="form-label">電話:</label>
-              <input type="phone" class="form-control" id="inputPhone" name="phone" value="<?php echo $phone ?>">
-            </div>
-            <div class="mb-3">
-              <label for="inputMail" class="form-label">信箱:</label>
-              <input type="mail" class="form-control" id="inputMail" name="mail" value="<?php echo $mail ?>">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">確認</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- --------- -->
-  <button class="btn btn-danger">
+
+  <button class=" btn btn-danger">
     <a href="../logout.php">登出</a>
   </button>
 

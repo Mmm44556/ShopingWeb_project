@@ -7,14 +7,14 @@ $password = $_POST['user-password'];
 
 $_SESSION['userName'] = $userId;
 $_SESSION['password'] = $password;
-$_SESSION['uid'] = $uid;
+
 
 $sql = "SELECT * FROM  `account` WHERE 
 (`userName`='$userId' && `password`='$password')||(`phoneNumber`='$userId' && `password`='$password')";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
-
-
+$_SESSION['uid'] = $row['uid'];
+// echo $_SESSION['uid']; == 2
 if (!empty($row)) {
   echo "<script>alert('登入成功')</script>";
 } else {
@@ -24,5 +24,5 @@ if (!empty($row)) {
 }
 ?>
 <script type="text/javascript">
-window.location.href = 'views/index.php';
+  window.location.href = 'views/index.php';
 </script>
